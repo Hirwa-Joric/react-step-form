@@ -5,10 +5,15 @@ import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-export class FormUserDetails extends Component {
+export class FormPersonalDetails extends Component {
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
+  };
+
+  back = e => {
+    e.preventDefault();
+    this.props.prevStep();
   };
 
   render() {
@@ -21,34 +26,41 @@ export class FormUserDetails extends Component {
             fullWidth
             maxWidth='sm'
           >
-            <AppBar title="Enter User Details" />
+            <AppBar title="Enter Personal Details" />
             <TextField
-              placeholder="Enter Your First Name"
-              label="First Name"
-              onChange={handleChange('firstName')}
-              defaultValue={values.firstName}
+              placeholder="Enter Your Occupation"
+              label="Occupation"
+              onChange={handleChange('occupation')}
+              defaultValue={values.occupation}
               margin="normal"
               fullWidth
             />
             <br />
             <TextField
-              placeholder="Enter Your Last Name"
-              label="Last Name"
-              onChange={handleChange('lastName')}
-              defaultValue={values.lastName}
+              placeholder="Enter Your City"
+              label="City"
+              onChange={handleChange('city')}
+              defaultValue={values.city}
               margin="normal"
               fullWidth
             />
             <br />
             <TextField
-              placeholder="Enter Your Email"
-              label="Email"
-              onChange={handleChange('email')}
-              defaultValue={values.email}
+              placeholder="Enter Your Bio"
+              label="Bio"
+              onChange={handleChange('bio')}
+              defaultValue={values.bio}
               margin="normal"
               fullWidth
             />
             <br />
+
+            <Button
+              color="secondary"
+              variant="contained"
+              onClick={this.back}
+            >Back</Button>
+
             <Button
               color="primary"
               variant="contained"
@@ -61,4 +73,4 @@ export class FormUserDetails extends Component {
   }
 }
 
-export default FormUserDetails;
+export default FormPersonalDetails;
