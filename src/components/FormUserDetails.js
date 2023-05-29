@@ -26,7 +26,7 @@ export class FormUserDetails extends Component {
               placeholder="Enter Your First Name"
               label="First Name"
               onChange={handleChange('firstName')}
-              defaultValue={values.firstName}
+              defaultValue={values.firstName
               margin="normal"
               fullWidth
             />
